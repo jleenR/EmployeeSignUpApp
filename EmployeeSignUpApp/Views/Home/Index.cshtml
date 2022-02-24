@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model EmployeeSignUpApp.Models.Data.Employee
+<div><b></b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Employee Id </th>
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Marital status</th>
+
+    </tr>
+    <tr>
+        <td>@Model.EmployeeId</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.LastName</td>
+        <td>@Model.Email</td>
+        <td>@Model.Gender.GenderDesc</td>
+        <td>@Model.MaritalStatus.MaritalStatusDesc</td>
+    </tr>
+</table> 

@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+@model EmployeeSignUpApp.Models.SignUpModel
+
+<section class="vh-10">
+    <br />
+    <br />
+    <div class="vdl-col-md-12 text-center font-weight-bold">
+        <h4>Welcome to the Employee Portal!</h4>
+    </div>
+    <br />
+    <br />
+</section>
+<section class="vh-90">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+                     alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 ">
+                <form asp-action="Logon" asp-controller="Login">
+                    <div class="form-group">
+                        <label asp-for="Email">Email Address</label>
+                        <input class="form-control" asp-for="Email" placeholder="Enter Email Address" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" asp-for="Password" placeholder="Enter Password" required="required" type="password" />
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Login
+                        </button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">
+                            Don't have an account?
+                            <a asp-controller="Login" asp-action="SignUp">Create Account</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        @if (ViewBag.ErrorMessage != "")
+        {
+            <div>
+                <div class="col-12 text-center bg-danger text-white">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>
